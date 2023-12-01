@@ -1,0 +1,29 @@
+.pagesOne {
+  background-image: url("../assets/fondo-1.jpg");
+  min-height: 100vh;
+  min-width: 100wh;
+  background-size: 100% 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 6;
+  flex-direction: column;
+}
+
+.pagesTwo {
+  background-image: url("../assets/fondoN-1.jpg");
+  min-height: 100vh;
+  min-width: 100wh;
+  background-size: 100% 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 6;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .pagesOne {
+    background-image: url("../assets/fondoN-movil-1.jpg");
+  }
+}
