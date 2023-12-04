@@ -1,0 +1,57 @@
+query currentUser {
+  currentUser {
+    _id
+    name
+    username
+    customer {
+      _id
+      firstName
+      lastName
+      phone
+      document
+      firstPurchase
+      wholesalerDate
+      customerType {
+        _id
+        name
+      }
+      documentType {
+        _id
+        abbreviation
+      }
+      addresses {
+        city {
+          _id
+          name
+          state
+          country {
+            name
+          }
+        }
+        contact
+        extra
+        field1
+        isMain
+        loteNumber
+        neighborhood
+        number1
+        number2
+        phone
+      }
+    }
+  }
+}
+
+
+mutation login($input: LoginUserInput!) {
+  login(loginUserInput: $input) {
+    access_token
+    user {
+      _id
+      shop {
+        _id
+        name
+      }
+    }
+  }
+}

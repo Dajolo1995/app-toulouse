@@ -1,0 +1,18 @@
+query conveyorsOrder($orderId: String!) {
+  conveyorsOrder(orderId: $orderId) {
+    conveyor {
+      _id
+      logo {
+        name
+        urls {
+          webp {
+            small
+          }
+        }
+      }
+      name
+    }
+    value
+    error
+  }
+}

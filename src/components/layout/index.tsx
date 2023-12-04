@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Layout } from "../../utils/Desing";
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 interface LayoutAppProps {
   children: ReactNode;

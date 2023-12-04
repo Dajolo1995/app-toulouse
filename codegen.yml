@@ -1,0 +1,16 @@
+overwrite: true
+schema: "https://qat-api-graphql.toulouse.com.co/graphql"
+documents: "src/graphql/**/*.graphql"
+generates:
+  src/graphql/types.graphql.tsx:
+    schema: src/graphql/**/*.graphql
+    plugins:
+      - "typescript"
+  src/graphql/documents.graphql.tsx:
+    schema: src/graphql/**/*.graphql
+    plugins:
+      - "typed-document-node"
+  src/graphql/operations.graphql.tsx:
+    schema: src/graphql/**/*.graphql
+    plugins:
+      - "typescript-operations"

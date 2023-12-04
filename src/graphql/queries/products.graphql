@@ -1,0 +1,10 @@
+query products($input: FiltersProductsInput!) {
+  products(filtersProductsInput: $input) {
+    docs {
+      _id
+      stock {
+        quantity
+      }
+    }
+  }
+}

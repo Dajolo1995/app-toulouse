@@ -1,0 +1,40 @@
+mutation updateCustomer($id: String!, $input: UpdateCustomerInput!) {
+  updateCustomer(id: $id, updateCustomerInput: $input) {
+    _id
+    active
+    addresses {
+      city {
+        _id
+        name
+        state
+        country{
+          name
+        }
+      }
+      contact
+      extra
+      field1
+      isMain
+      loteNumber
+      neighborhood
+      number1
+      number2
+      phone
+    }
+    birthday
+    createdAt
+    customerType {
+      _id
+    }
+    document
+    documentType {
+      _id
+    }
+    email
+    firstName
+    isWhatsapp
+    lastName
+    phone
+    updatedAt
+  }
+}

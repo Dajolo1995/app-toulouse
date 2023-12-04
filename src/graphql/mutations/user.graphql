@@ -1,0 +1,83 @@
+mutation signup($input: SignUpInput!) {
+  signup(signUpInput: $input) {
+    access_token
+    user {
+      _id
+      createdAt
+      customer {
+        _id
+        firstName
+        lastName
+        email
+      }
+      name
+      status
+      updatedAt
+      username
+    }
+  }
+}
+
+mutation updateUser($id: String!, $input: UpdateUserInput!) {
+  updateUser(id: $id, updateUserInput: $input) {
+    _id
+    name
+    username
+    customer {
+      _id
+      firstName
+      lastName
+      phone
+      document
+      customerType {
+        name
+      }
+      documentType {
+        abbreviation
+      }
+      addresses {
+        city {
+          _id
+          name
+          state
+          country {
+            name
+          }
+        }
+        contact
+        extra
+        field1
+        isMain
+        loteNumber
+        neighborhood
+        number1
+        number2
+        phone
+      }
+    }
+  }
+}
+
+mutation recoveryPassword($email: String!) {
+  recoveryPassword(email: $email)
+}
+
+mutation changePasswordToken($token: String!, $password: String!) {
+  changePasswordToken(token: $token, password: $password) {
+    access_token
+    user {
+      _id
+      createdAt
+      customer {
+        _id
+        firstName
+        lastName
+        email
+      }
+      name
+      status
+      updatedAt
+      username
+    }
+  }
+}

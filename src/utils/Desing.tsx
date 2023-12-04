@@ -5,5 +5,4 @@ export {
   Breadcrumb,
   Layout,
   Menu,
-  theme,
 } from "antd";

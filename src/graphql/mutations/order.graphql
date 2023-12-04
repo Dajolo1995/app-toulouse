@@ -1,0 +1,225 @@
+mutation createOrder($input: CreateOrderInput!) {
+  createOrder(createOrderInput: $input) {
+    order {
+      _id
+      number
+      address {
+        field1
+        number1
+        number2
+        loteNumber
+        extra
+        neighborhood
+        city {
+          _id
+          name
+          state
+          country{
+            name
+          }
+        }
+        isMain
+      }
+      customer {
+        _id
+        document
+        firstName
+        lastName
+        addresses {
+          field1
+          number1
+          number2
+          loteNumber
+          extra
+          neighborhood
+          city {
+            _id
+            name
+            state
+            country{
+              name
+            }
+          }
+          isMain
+        }
+      }
+      details {
+        product {
+          _id
+          reference {
+            name
+            description
+          }
+          color {
+            name
+            image {
+              urls {
+                webp {
+                  small
+                }
+              }
+            }
+            html
+          }
+          stock {
+            quantity
+          }
+          size {
+            value
+          }
+        }
+        quantity
+        price
+        discount
+      }
+      conveyorOrder {
+        conveyor {
+          _id
+          logo {
+            name
+            urls {
+              webp {
+                small
+              }
+            }
+          }
+        }
+        value
+      }
+      summary {
+        total
+        discount
+        subtotal
+        totalPaid
+      }
+    }
+  }
+}
+
+mutation updateOrder($id: String!, $input: UpdateOrderInput!) {
+  updateOrder(id: $id, updateOrderInput: $input) {
+    order {
+      _id
+      number
+      address {
+        field1
+        number1
+        number2
+        loteNumber
+        extra
+        neighborhood
+        city {
+          _id
+          name
+          state
+          country{
+            name
+          }
+        }
+        isMain
+      }
+      customer {
+        _id
+        document
+        firstName
+        lastName
+        addresses {
+          field1
+          number1
+          number2
+          loteNumber
+          extra
+          neighborhood
+          city {
+            _id
+            name
+            state
+            country{
+              name
+            }
+          }
+          isMain
+        }
+      }
+      details {
+        product {
+          _id
+          reference {
+            name
+            description
+          }
+          color {
+            name
+            image {
+              urls {
+                webp {
+                  small
+                }
+              }
+            }
+            html
+          }
+          stock {
+            quantity
+          }
+          size {
+            value
+          }
+        }
+        quantity
+        price
+        discount
+      }
+      conveyorOrder {
+        conveyor {
+          _id
+          logo {
+            name
+            urls {
+              webp {
+                small
+              }
+            }
+          }
+        }
+        value
+      }
+      summary {
+        total
+        discount
+        subtotal
+        totalPaid
+      }
+    }
+  }
+}
+
+mutation addProductsOrder($input: AddProductsOrderInput!) {
+  addProductsOrder(addProductsOrderInput: $input) {
+    order {
+      _id
+      details {
+        quantity
+        product {
+          _id
+        }
+      }
+    }
+  }
+}
+
+mutation addPaymentsOrder($input: AddPaymentsOrderInput!) {
+  addPaymentsOrder(addPaymentsOrderInput: $input) {
+    order {
+      _id
+      summary {
+        total
+        subtotal
+        totalPaid
+      }
+      payments {
+        total
+      }
+    }
+  }
+}

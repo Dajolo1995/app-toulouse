@@ -1,0 +1,7 @@
+query documentTypes($input: FiltersDocumentTypesInput) {
+  documentTypes(filtersDocumentTypesInput: $input) {
+    _id
+    name
+    abbreviation
+  }
+}

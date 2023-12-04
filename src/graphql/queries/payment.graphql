@@ -1,0 +1,14 @@
+query payments($input: FiltersPaymentsInput) {
+  payments(filtersPaymentsInput: $input) {
+    docs {
+      _id
+      name
+      type
+      active
+      message
+      shops {
+        _id
+      }
+    }
+  }
+}

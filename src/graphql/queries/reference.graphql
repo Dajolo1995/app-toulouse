@@ -1,0 +1,58 @@
+query references($companyId: String!, $input: FiltersReferencesInput) {
+  references(filtersReferencesInput: $input, companyId: $companyId) {
+    docs {
+      _id
+      name
+      price
+      description
+      discountPrice
+      products {
+        _id
+        status
+        barcode
+        color {
+          _id
+          html
+          image {
+            _id
+            urls {
+              jpeg {
+                small
+              }
+              webp {
+                small
+              }
+            }
+          }
+          name
+          name_internal
+        }
+        size {
+          _id
+          value
+          weight
+        }
+        images {
+          _id
+          name
+          urls {
+            jpeg {
+              small
+            }
+            webp {
+              small
+            }
+          }
+        }
+        stock {
+          warehouse {
+            _id
+          }
+          quantity
+        }
+      }
+    }
+    totalPages
+    page
+  }
+}

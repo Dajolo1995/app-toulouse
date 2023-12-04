@@ -1,0 +1,262 @@
+query orderId($id: String!) {
+  orderId(id: $id) {
+    order {
+      _id
+      number
+      customer {
+        _id
+        document
+        firstName
+        lastName
+        customerType {
+          name
+        }
+        addresses {
+          city {
+            _id
+            name
+            state
+            country {
+              name
+            }
+          }
+          contact
+          extra
+          field1
+          isMain
+          loteNumber
+          neighborhood
+          number1
+          number2
+          phone
+        }
+      }
+      details {
+        product {
+          _id
+          reference {
+            name
+            description
+          }
+          color {
+            name
+            image {
+              urls {
+                webp {
+                  small
+                }
+              }
+            }
+            html
+          }
+          images {
+            urls {
+              webp {
+                small
+              }
+            }
+          }
+          stock {
+            quantity
+          }
+          size {
+            value
+          }
+        }
+        quantity
+        price
+        discount
+      }
+      address {
+        city {
+          _id
+          name
+          state
+          country {
+            name
+          }
+        }
+        contact
+        extra
+        field1
+        isMain
+        loteNumber
+        neighborhood
+        number1
+        number2
+        phone
+      }
+      conveyorOrder {
+        conveyor {
+          _id
+          logo {
+            name
+            urls {
+              webp {
+                small
+              }
+            }
+          }
+        }
+        value
+      }
+      summary {
+        total
+        discount
+        subtotal
+        totalPaid
+      }
+      payments {
+        payment {
+          _id
+          type
+          name
+        }
+        total
+      }
+      statusWeb
+      status
+      createdAt
+      updatedAt
+    }
+    credit {
+      available
+    }
+    conveyors {
+      value
+      conveyor {
+        _id
+        logo {
+          urls {
+            jpeg {
+              small
+            }
+          }
+        }
+        name
+      }
+    }
+  }
+}
+
+query orders($input: FiltersOrdersInput!) {
+  orders(filtersOrdersInput: $input) {
+    docs {
+      _id
+      number
+      customer {
+        _id
+        document
+        firstName
+        lastName
+        customerType {
+          name
+        }
+        addresses {
+          city {
+            _id
+            name
+            state
+            country {
+              name
+            }
+          }
+          contact
+          extra
+          field1
+          isMain
+          loteNumber
+          neighborhood
+          number1
+          number2
+          phone
+        }
+      }
+
+      payments {
+        total
+      }
+
+      details {
+        product {
+          _id
+          reference {
+            name
+            description
+          }
+          color {
+            name
+            image {
+              urls {
+                webp {
+                  small
+                }
+              }
+            }
+            html
+          }
+          stock {
+            quantity
+          }
+          size {
+            value
+          }
+          images {
+            urls {
+              webp {
+                small
+              }
+            }
+          }
+        }
+        quantity
+        price
+        discount
+      }
+      address {
+        city {
+          _id
+          name
+          state
+          country {
+            name
+          }
+        }
+        contact
+        extra
+        field1
+        isMain
+        loteNumber
+        neighborhood
+        number1
+        number2
+        phone
+      }
+      conveyorOrder {
+        conveyor {
+          _id
+          logo {
+            name
+            urls {
+              webp {
+                small
+              }
+            }
+          }
+        }
+        value
+      }
+      summary {
+        total
+        discount
+        subtotal
+        totalPaid
+      }
+      createdAt
+      updatedAt
+      statusWeb
+    }
+    totalPages
+    page
+  }
+}

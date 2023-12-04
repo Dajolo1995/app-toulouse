@@ -1,0 +1,23 @@
+query SHOPSQUERY ($input: FiltersShopsInput ) {
+  shopsClient (filtersShopsInputs:$input) {
+    docs {
+      _id
+      name
+      address
+      phone
+      maps
+      company {
+        _id
+        name
+        __typename
+      }
+      city {
+        _id
+        name
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}
