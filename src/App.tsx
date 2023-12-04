@@ -1,15 +1,13 @@
 import "./App.css";
 import React from "react";
-import Welcome from "./pages/welcome";
+import RouterMain from "./router";
 
 const App: React.FC = () => {
-  return <>
-
-
-  
-  <Welcome />
-  
-  </>;
+  return (
+    <>
+      <RouterMain />
+    </>
+  );
 };
 
 export default App;
