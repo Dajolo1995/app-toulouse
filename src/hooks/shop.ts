@@ -1,5 +1,5 @@
 import { useLazyQuery } from "@apollo/client";
-import { ShopsqueryDocument } from "@/graphql/documents.graphql";
+import { ShopsqueryDocument } from "../graphql/documents.graphql";
 
 
 export const useGetShop = () => {

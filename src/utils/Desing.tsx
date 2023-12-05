@@ -9,4 +9,6 @@ export {
   Input,
   Row,
   Col,
+  Card,
+  Divider,
 } from "antd";

@@ -34,6 +34,7 @@ const AuthLogin: React.FC = () => {
 
 
   const generateOrder = async () => {
+    console.log("generateOrder", shopId);
     const response = await createOrder({
       variables: {
         input: {

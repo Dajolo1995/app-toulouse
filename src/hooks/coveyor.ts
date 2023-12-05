@@ -1,6 +1,6 @@
 import { useLazyQuery } from "@apollo/client";
 
-import { ConveyorsOrderDocument } from "@/graphql/documents.graphql";
+import { ConveyorsOrderDocument } from "../graphql/documents.graphql";
 
 export const useGetConveyors = () => {
   return useLazyQuery(ConveyorsOrderDocument, {

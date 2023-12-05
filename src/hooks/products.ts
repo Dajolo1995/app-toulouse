@@ -1,4 +1,4 @@
-import { ProductsDocument } from "@/graphql/documents.graphql";
+import { ProductsDocument } from "../graphql/documents.graphql";
 import { useLazyQuery } from "@apollo/client";
 
 export const useGetProducts = () => {

@@ -27,7 +27,7 @@ const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
     }
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     fetchData();
 
     if (isLogin) {
@@ -36,7 +36,7 @@ const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
         navigate("/catalogo");
       }
     }
-  }, [data]); // Dependencias vacías para ejecutar una vez al montar
+  }, [data]); */ // Dependencias vacías para ejecutar una vez al montar
 
   return (
     <Layout>
