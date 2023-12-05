@@ -7,7 +7,7 @@ import {
   SignupDocument,
   RecoveryPasswordDocument,
   ChangePasswordTokenDocument,
-} from "@/graphql/documents.graphql";
+} from "../graphql/documents.graphql";
 
 export const useGetCurrentUser = () => {
   return useLazyQuery(CurrentUserDocument, {

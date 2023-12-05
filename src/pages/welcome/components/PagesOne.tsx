@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../styles/stepOne.css";
-import LogoWhite from "../../../assets/logoBlanco.png";
+import WhiteLogo from "../../../components/image/WhiteLogo";
 import TitleText from "../../../components/text/TitleText";
 import ButtonSend from "../../../components/button/ButtonSend";
 import IconFlag from "../../../components/icon/IconFlag";
@@ -9,7 +9,7 @@ import "../../../styles/stepOne.css";
 const PagesOne: React.FC = () => {
   return (
     <div className="pagesOne">
-      <img src={LogoWhite} alt="logo" width={235} />
+      <WhiteLogo width={235} />
 
       <TitleText
         title="Ropa interior única"

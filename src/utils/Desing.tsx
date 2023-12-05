@@ -5,4 +5,8 @@ export {
   Breadcrumb,
   Layout,
   Menu,
+  Form,
+  Input,
+  Row,
+  Col,
 } from "antd";

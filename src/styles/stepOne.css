@@ -22,8 +22,25 @@
   flex-direction: column;
 }
 
+.sx-box {
+  background-image: url("../assets/fondoLogin.jpg");
+  min-height: 89.6vh;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px;
+}
+
 @media screen and (max-width: 600px) {
   .pagesOne {
     background-image: url("../assets/fondoN-movil-1.jpg");
+  }
+  .pagesTwo {
+    background-image: url("../assets/fondoN-movil-1.jpg");
+  }
+
+  .sx-box {
+    background-image: url("../assets/fondo-movil-2.jpg");
   }
 }

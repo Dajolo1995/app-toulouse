@@ -1,0 +1,11 @@
+export const API_URL = import.meta.env.VITE_API_URL || "#{API_URL}";
+export const CDN_URL = import.meta.env.VITE_CDN_URL || "#{CDN_URL}#";
+export const COMPANY_ID = import.meta.env.VITE_COMPANY_ID || "#{COMPANY_ID}#";
+export const CUSTOMER_TYPE_ID = import.meta.env.VITE_CUSTOMER_TYPE_ID || "#{CUSTOMER_TYPE_ID}#";
+export const SHOP_ID = import.meta.env.VITE_SHOP_ID || "#{SHOP_ID}#";
+export const WAREHOUSE_ID = import.meta.env.VITE_WAREHOUSE_ID || "#{WAREHOUSE_ID}#";
+export const REGISTER = import.meta.env.VITE_REGISTER || "#{REGISTER}#";
+export const apiKey = "2704b0ce520b4865b61a4285e94b95a3";
+export const CUSTOMER_ID = import.meta.env.VITE_CUSTOMER_ID || "#{CUSTOMER_ID}#";
+export const CATALOGO = import.meta.env.VITE_CATALOGO || "#{CATALOGO}#";
+export const TITLE_PRICE = import.meta.env.VITE_TITLE_PRICE || "#{TITLE_PRICE}#";

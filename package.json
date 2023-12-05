@@ -16,7 +16,9 @@
     "@emotion/styled": "^11.11.0",
     "@graphql-codegen/typed-document-node": "^5.0.1",
     "antd": "^5.11.5",
+    "formik": "^2.4.5",
     "graphql": "^16.8.1",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
@@ -35,6 +37,7 @@
     "eslint": "^8.53.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   }

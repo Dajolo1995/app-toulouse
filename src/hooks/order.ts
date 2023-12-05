@@ -1,5 +1,4 @@
 import { useLazyQuery, useMutation } from "@apollo/client";
-
 import {
   OrderIdDocument,
   OrdersDocument,
@@ -7,7 +6,7 @@ import {
   AddPaymentsOrderDocument,
   CreateOrderDocument,
   UpdateOrderDocument,
-} from "@/graphql/documents.graphql";
+} from "../graphql/documents.graphql";
 
 export const useGetOrderId = () => {
   return useLazyQuery(OrderIdDocument, {

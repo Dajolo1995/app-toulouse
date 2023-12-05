@@ -3,3 +3,9 @@ body{
   padding: 0;
   font-family: "Poppins";
 }
+
+.css-dev-only-do-not-override-2q8sxy .ant-input-affix-wrapper > input.ant-input {
+  background-color: #744546;
+  color: #fff;
+  border: none;
+}

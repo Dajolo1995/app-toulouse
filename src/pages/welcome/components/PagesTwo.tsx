@@ -1,15 +1,14 @@
 import React from "react";
-import LogoWhite from "../../../assets/logoBlanco.png";
+import WhiteLogo from "../../../components/image/WhiteLogo";
 import TitleText from "../../../components/text/TitleText";
 import ButtonSend from "../../../components/button/ButtonSend";
 import IconFlag from "../../../components/icon/IconFlag";
 import "../../../styles/stepOne.css";
 
-
 const PagesTwo: React.FC = () => {
   return (
     <div className="pagesTwo">
-      <img src={LogoWhite} alt="logo" width={235} />
+      <WhiteLogo width={235} />
 
       <TitleText
         title="Haz tus compras"

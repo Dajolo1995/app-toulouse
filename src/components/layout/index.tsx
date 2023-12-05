@@ -23,7 +23,6 @@ const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
       ></Header>
       <Content
         className="site-layout"
-        style={{ padding: "10px", background: "#fff", minHeight: "89vh" }}
       >
         {children}
       </Content>
