@@ -4,6 +4,9 @@ import { getToken } from "./auth";
 import { API_URL } from "../ViteConfg";
 
 
+console.log(API_URL);
+
+
 
 const link = createHttpLink({
     uri: `${API_URL}/graphql`,

@@ -1,18 +1,31 @@
-import React from "react";
-import {
-  Form,
-  Input,
-  Typography,
-  Button,
-} from "../../../../utils/Desing";
+import React, { useState } from "react";
+import { Form, Input, Typography, Button } from "../../../../utils/Desing";
+import { login } from "../../../../interface/auth";
 
 const { Item } = Form;
 const { Password } = Input;
 const { Text } = Typography;
 
-const FormLogin: React.FC = () => {
+interface props {
+  handleSubmit: (values: login) => void;
+  loading: boolean;
+  REGISTER: string;
+}
+
+const FormLogin: React.FC<props> = ({ handleSubmit, loading, REGISTER }) => {
+  const [stateForm, setStateForm] = useState({
+    username: "",
+    password: "",
+  });
+
   return (
-    <Form>
+    <Form
+      onFinish={() => handleSubmit(stateForm)}
+      initialValues={{
+        username: "",
+        password: "",
+      }}
+    >
       <Text style={{ color: "#fff" }}>Ingresa tu correo electrónico</Text>
 
       <Item
@@ -25,6 +38,7 @@ const FormLogin: React.FC = () => {
         ]}
       >
         <Input
+          disabled={loading}
           style={{
             backgroundColor: "#744546",
             color: "#fff",
@@ -35,6 +49,13 @@ const FormLogin: React.FC = () => {
           }}
           type="email"
           placeholder="Correo electrónico"
+          onChange={(e) =>
+            setStateForm({
+              ...stateForm,
+
+              username: e.target.value,
+            })
+          }
         />
       </Item>
 
@@ -42,6 +63,7 @@ const FormLogin: React.FC = () => {
 
       <Item>
         <Password
+          disabled={loading}
           style={{
             backgroundColor: "#744546",
             color: "#fff",
@@ -51,21 +73,25 @@ const FormLogin: React.FC = () => {
             borderRadius: "20px",
           }}
           placeholder="Ingresa tu contraseña"
+          onChange={(e) =>
+            setStateForm({
+              ...stateForm,
+              password: e.target.value,
+            })
+          }
         />
-        
       </Item>
-
 
       <Button type="link" style={{ color: "#000" }}>
         ¿Olvidaste tu contraseña?
       </Button>
 
-
-      <Item  style={{margin:"20px 0"}} >
+      <Item style={{ margin: "20px 0" }}>
         <Button
           htmlType="submit"
           type="primary"
           shape="circle"
+          disabled={loading}
           style={{
             width: "260px",
             height: "35px",
@@ -78,12 +104,14 @@ const FormLogin: React.FC = () => {
         </Button>
       </Item>
 
-      <Item>
-        <Text style={{ color: "#fff" }}>Si no cuentas con usuario</Text>
-        <Button type="link" style={{ color: "#DC9F95" }}>
-        *Regístrate aquí*
-        </Button>
-      </Item>
+      {REGISTER === "true" ? (
+        <Item>
+          <Text style={{ color: "#fff" }}>Si no cuentas con usuario</Text>
+          <Button type="link" style={{ color: "#DC9F95" }}>
+            *Regístrate aquí*
+          </Button>
+        </Item>
+      ) : null}
     </Form>
   );
 };

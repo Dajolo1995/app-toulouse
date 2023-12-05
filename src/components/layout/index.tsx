@@ -1,5 +1,7 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { Layout } from "../../utils/Desing";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useGetCurrentUser } from "../../hooks/user";
 
 const { Header, Content } = Layout;
 
@@ -8,6 +10,34 @@ interface LayoutAppProps {
 }
 
 const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
+  const [getCurrent, { data }] = useGetCurrentUser();
+  const params = useLocation();
+  const navigate = useNavigate();
+
+  const isLogin = !!data?.currentUser?._id;
+
+  const fetchData = async () => {
+    await getCurrent();
+
+    if (isLogin) {
+      console.log(isLogin);
+      if (params.pathname === "/auth/login") {
+        navigate("/catalogo");
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+
+    if (isLogin) {
+      console.log(isLogin);
+      if (params.pathname === "/auth/login") {
+        navigate("/catalogo");
+      }
+    }
+  }, [data]); // Dependencias vacías para ejecutar una vez al montar
+
   return (
     <Layout>
       <Header
@@ -21,14 +51,7 @@ const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
           background: "#000000",
         }}
       ></Header>
-      <Content
-        className="site-layout"
-      >
-        {children}
-      </Content>
-      {/* <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2023 Created by Ant UED
-      </Footer> */}
+      <Content className="site-layout">{children}</Content>
     </Layout>
   );
 };
