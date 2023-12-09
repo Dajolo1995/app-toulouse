@@ -1,7 +1,7 @@
-import React, { ReactNode, useEffect } from "react";
+// LayoutApp.tsx
+import React, { ReactNode } from "react";
 import { Layout } from "../../utils/Desing";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useGetCurrentUser } from "../../hooks/user";
+import MenuMain from "./components/Menu"; // Correct import
 
 const { Header, Content } = Layout;
 
@@ -10,34 +10,6 @@ interface LayoutAppProps {
 }
 
 const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
-  const [getCurrent, { data }] = useGetCurrentUser();
-  const params = useLocation();
-  const navigate = useNavigate();
-
-  const isLogin = !!data?.currentUser?._id;
-
-  const fetchData = async () => {
-    await getCurrent();
-
-    if (isLogin) {
-      console.log(isLogin);
-      if (params.pathname === "/auth/login") {
-        navigate("/catalogo");
-      }
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-
-    if (isLogin) {
-      console.log(isLogin);
-      if (params.pathname === "/auth/login") {
-        navigate("/catalogo");
-      }
-    }
-  }, [data]); // Dependencias vacías para ejecutar una vez al montar
-
   return (
     <Layout>
       <Header
@@ -49,9 +21,15 @@ const LayoutApp: React.FC<LayoutAppProps> = ({ children }) => {
           display: "flex",
           alignItems: "center",
           background: "#000000",
+          height: "80px",
+          // borderEndStartRadius: "30px",
+          // borderEndEndRadius: "30px",
+          boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
         }}
-      ></Header>
-      <Content className="site-layout">{children}</Content>
+      >
+        <MenuMain />
+      </Header>
+      <Content style={{background:"#fff"}} >{children}</Content>
     </Layout>
   );
 };

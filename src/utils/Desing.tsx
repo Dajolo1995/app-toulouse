@@ -9,4 +9,6 @@ export {
   Input,
   Row,
   Col,
+  Drawer,
+  Badge
 } from "antd";
